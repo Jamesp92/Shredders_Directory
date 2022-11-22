@@ -1,0 +1,6 @@
+
+ api that allows users to find list of states with ski resorts in them
+
+ each state has many resorts but resorts only have one state
+
+ each resort has many chair lifts

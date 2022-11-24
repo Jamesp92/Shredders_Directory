@@ -22,7 +22,7 @@ Epicodus solo project that demonstrates use of ruby on rails /  this a a API tha
 ### Clone the repository
 
 ```shell
-git clone https://github.com/Jamesp92/Marios_specialty_foods
+git clone https://github.com/Jamesp92/Shredders_Directory
 cd project
 ```
 

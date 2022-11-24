@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_020548) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_221345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_020548) do
     t.index ["token"], name: "index_api_keys_on_token", unique: true
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.string "country_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resorts", force: :cascade do |t|
+    t.string "resort_name"
+    t.integer "number_of_lifts"
+    t.integer "ticket_cost"
+    t.integer "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "state_name"
+    t.integer "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -32,4 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_020548) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "resorts", "states"
+  add_foreign_key "states", "countries"
 end

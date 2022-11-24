@@ -1,18 +1,13 @@
 class StateController < ApplicationController
 
   def index
-    @states = Country.all
+    @states = State.all
     json_response(@states)
   end
 
   def show
-    country = Country.find(params[:country_id])
-    @states = State.find(params[:id])
-    if @states.country_id = country.id
-      json_response(@states)
-    else
-      # flash error or whatever
-    end
+    @state = State.find(params[:id])
+    json_response(@state)
   end
 
   def create

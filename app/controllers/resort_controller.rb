@@ -6,14 +6,11 @@ class ResortController < ApplicationController
   end
 
   def show
-    state = State.find(params[:state_id])
     @resort = Resort.find(params[:id])
-    if @resort.state_id = state.id
-      json_response(@resort)
-    else
-      # flash error or whatever
+    json_response(@resort)
+    
     end
-  end
+  
 
   def create
     @resort = Resort.create(resort_params)
@@ -40,7 +37,3 @@ class ResortController < ApplicationController
   end
 end
 
-# t.string "resort_name"
-# t.integer "number_of_lifts"
-# t.integer "ticket_cost"
-# t.integer "state_id"

@@ -1,5 +1,5 @@
-# Marios specialty foods!
-Epicodus solo project that demonstrates use of ruby on rails , allows users to add update and delete food products as well as write reviews for products.
+# The Shredders Directory !
+Epicodus solo project that demonstrates use of ruby on rails /  this a a API that allows people to look up / Add and Delete ski resorts in different countries and states /
 
 ## Technologies Used
 * Rails
